@@ -5,7 +5,7 @@
     black 60%,
     rgba(0, 0, 0, 0.014) 90%
   );
-  mask-image: linear-gradient(to bottom, black 60%, rgba(0, 0, 0, 0.014) 90%);
+  mask-image: linear-gradient(to bottom, black 70%, rgba(0, 0, 0, 0.014) 90%);
 }
 
 .gradient-hero {
@@ -103,6 +103,15 @@ h1 span {
 
 /* Tablet screen */
 @media (max-width: 768px) {
+  #hero {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 60%,
+      rgba(0, 0, 0, 0.014) 90%
+    );
+    mask-image: linear-gradient(to bottom, black 60%, rgba(0, 0, 0, 0.014) 90%);
+  }
+
   .image-hero {
     max-width: 300px;
   }
