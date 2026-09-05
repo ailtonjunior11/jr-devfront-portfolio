@@ -1,0 +1,151 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: var(--color-cards);
+}
+
+.menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.list-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.list-links li {
+  padding-inline: 10px;
+}
+
+.list-links li a,
+.list-links-mobile li a {
+  color: var(--color-text);
+  font-weight: 400;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+
+.list-links li a:hover {
+  opacity: 1;
+  background-color: var(--color-btn);
+  color: var(--color-bg);
+  border-radius: var(--border-radius-btn);
+  box-shadow: var(--box-shadow-btn);
+  padding: 6px 16px;
+}
+
+.logo .link-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.img-logo {
+  width: 25px;
+}
+
+.link-contact {
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-btn);
+  color: var(--color-bg);
+  padding: 6px 16px;
+  border-radius: var(--border-radius-btn);
+  box-shadow: var(--box-shadow-btn);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menu mobile */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 70%;
+  height: 100dvh;
+  background-color: var(--color-cards);
+  overflow: hidden;
+  z-index: 999;
+  transition: all 0.5s linear ease-in-out;
+}
+
+.nav-mobile.active ~ .overlay-menu {
+  display: block;
+}
+
+.list-links-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.list-links-mobile li {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-btn);
+  transition: all 0.5s ease-in-out;
+}
+
+.list-links-mobile li:hover {
+  background-color: var(--color-bg);
+}
+
+.container-button {
+  display: none;
+}
+
+.btn-open,
+.btn-close {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Overlay */
+.overlay-menu {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #202336be;
+  z-index: 888;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-mobile.active {
+    display: block;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .container-button {
+    display: block;
+  }
+
+  .btn-close {
+    display: none;
+  }
+}

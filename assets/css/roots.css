@@ -1,0 +1,30 @@
+:root {
+  /* colors */
+  --color-bg: #111320;
+  --color-btn: #20f6fd;
+  --color-cards: #202336;
+  --color-title: #e8eddc;
+  --color-text: #d4d4d4;
+  --color-highlight-title: #d30cee;
+
+  /* fonts */
+  --font-family: "Inter", sans-serif;
+
+  /* sizes */
+
+  /* widths */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 900;
+
+  /* borders */
+  --border-radius-btn: 10px;
+  --border-radius-title: 50px;
+  --border-radius-card: 15px;
+
+  /* effects */
+  --box-shadow-btn: 0px 0px 10px var(--color-btn);
+}
