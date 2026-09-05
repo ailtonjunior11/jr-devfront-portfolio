@@ -77,6 +77,11 @@
     max-width: 340px;
     margin-bottom: 60px;
   }
+
+  .icons-skills img:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 /* Mobile screen */

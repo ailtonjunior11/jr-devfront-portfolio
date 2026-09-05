@@ -44,3 +44,11 @@ main {
   align-items: center;
   color: var(--color-text);
 }
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .secao {
+    padding: 8rem 2%;
+  }
+}

@@ -105,6 +105,10 @@ footer {
   .text-content-footer {
     align-items: center;
   }
+
+  .icons-redes-sociais a:hover {
+    transform: none;
+  }
 }
 
 /* Mobile screen */

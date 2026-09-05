@@ -126,6 +126,10 @@
   .container-cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .card-contact:hover {
+    transform: none;
+  }
 }
 
 /* Tablet screen */

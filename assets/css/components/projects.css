@@ -79,6 +79,10 @@
   .grid-cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .card:hover {
+    transform: none;
+  }
 }
 
 /* Mobile screen */
