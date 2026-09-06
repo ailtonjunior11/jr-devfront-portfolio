@@ -5,24 +5,29 @@
     black 60%,
     rgba(0, 0, 0, 0.014) 90%
   );
-  mask-image: linear-gradient(to bottom, black 70%, rgba(0, 0, 0, 0.014) 90%);
+  mask-image: linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0.014) 90%);
 }
 
-.gradient-hero {
+.video-background {
   position: absolute;
-  top: -150px;
-  right: -270px;
-  width: 80%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.image-hero {
-  max-width: 300px;
-}
-
-.image-hero img {
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.video-section .text-hero {
+  position: relative;
+  z-index: 2;
 }
 
 .text-hero {
@@ -54,6 +59,7 @@ h1 {
   line-height: 65px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
+  text-shadow: 0 0 18px rgb(0, 0, 0);
 }
 
 h1 span {
@@ -112,10 +118,6 @@ h1 span {
     mask-image: linear-gradient(to bottom, black 60%, rgba(0, 0, 0, 0.014) 90%);
   }
 
-  .image-hero {
-    max-width: 300px;
-  }
-
   h1 {
     font-size: 45px;
     line-height: 55px;
@@ -152,10 +154,6 @@ h1 span {
 
 /* Mobile screen */
 @media (max-width: 430px) {
-  .image-hero {
-    display: none;
-  }
-
   h1 {
     font-size: 35px;
     line-height: 45px;
