@@ -1,5 +1,6 @@
 #hero {
   justify-content: space-between;
+  margin-top: 60px;
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 60%,
