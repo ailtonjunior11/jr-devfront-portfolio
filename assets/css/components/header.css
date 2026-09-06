@@ -148,4 +148,8 @@ header {
   .btn-close {
     display: none;
   }
+
+  .img-logo {
+    width: 20px;
+  }
 }
