@@ -5,9 +5,10 @@
 .container-cards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 100px;
+  width: 100%;
 }
 
 .card-contact {
@@ -17,7 +18,7 @@
   align-items: center;
   gap: 30px;
   padding: 10px 30px;
-  width: 280px;
+  width: 100%;
   height: auto;
   border-radius: var(--border-radius-card);
   transition: all 0.3s ease-in-out;
@@ -122,6 +123,12 @@
   }
 }
 
+.btn-card:focus-visible {
+  outline: 3px solid var(--color-btn);
+  outline-offset: 4px;
+  border-radius: var(--border-radius-btn);
+}
+
 /* Responsividade */
 
 /* Tablet screen */
@@ -151,11 +158,6 @@
   }
 
   .container-cards {
-    width: 100%;
     padding: 0 5px;
-  }
-
-  .card-contact {
-    width: 100%;
   }
 }

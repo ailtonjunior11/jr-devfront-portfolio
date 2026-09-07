@@ -17,6 +17,13 @@ const closeMenu = () => {
   btnClose.style.display = "none";
 };
 
+// Função / Evento de fechamento pela tecla "Escape"
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuMobile.classList.contains("active")) {
+    closeMenu();
+  }
+});
+
 // Evento de click no botão abrir o menu
 btnOpen.addEventListener("click", () => {
   btnOpen.style.display = "none";
@@ -42,5 +49,22 @@ mobileLinks.forEach((link) => {
 
 // Evento de click para abrir e fechar o menu
 btnOpen.addEventListener("click", toggleMenu);
-btnClose.addEventListener("click", toggleMenu);
-overlayMenu.addEventListener("click", toggleMenu);
+btnClose.addEventListener("click", closeMenu);
+overlayMenu.addEventListener("click", closeMenu);
+
+// Para interromper o vídeo quando o usuário prefere menos movimento
+const videos = document.querySelectorAll(".video-background");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+const updateVideoMotion = () => {
+  videos.forEach((video) => {
+    if (reducedMotion.matches) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  });
+};
+
+updateVideoMotion();
+reducedMotion.addEventListener("change", updateVideoMotion);

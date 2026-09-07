@@ -85,7 +85,7 @@ h1 {
 }
 
 .cta-contact:hover {
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   box-shadow: var(--box-shadow-btn);
 }
 
@@ -125,7 +125,6 @@ h1 {
 
   .cta-contact:hover,
   .btn-cta:hover {
-    background-color: none;
     box-shadow: none;
   }
 }

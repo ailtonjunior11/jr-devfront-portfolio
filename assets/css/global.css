@@ -76,6 +76,10 @@ main {
   z-index: 1;
 }
 
+.video-section {
+  background-color: var(--color-bg);
+}
+
 /* Responsividade */
 
 @media (max-width: 768px) {
@@ -100,5 +104,12 @@ main {
 
   .title-section img {
     width: 18px;
+  }
+}
+
+/* Respeitar usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .video-background {
+    display: none;
   }
 }

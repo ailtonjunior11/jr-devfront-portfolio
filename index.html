@@ -19,7 +19,7 @@
       </a>
     </div> <!-- Logo -->
 
-    <nav class="menu-desktop">
+    <nav class="menu-desktop" aria-label="menu-desktop">
       <ul class="list-links">
         <li>
           <a href="#projects" class="link-menu">Projetos</a>
@@ -36,7 +36,7 @@
     </nav> <!-- Menu navegação -->
 
     <!-- Menu mobile -->
-    <nav class="nav-mobile">
+    <nav class="nav-mobile" aria-label="menu-mobile">
       <ul class="list-links-mobile">
         <li>
           <a href="#projects" class="link-menu-mobile">Projetos</a>
@@ -52,10 +52,11 @@
         </li>
       </ul> <!-- Lista de links mobile -->
     </nav>
+
     <div class="container-button">
-      <i class='bx bx-menu-alt-right btn-open'></i>
-      <i class='bx bx-x btn-close'></i>
-    </div> <!-- Container dos botões do menu mobile -->
+      <i class="bx bx-menu-alt-right btn-open"></i>
+      <i class="bx bx-x btn-close"></i>
+    </div> <!-- Containers dos botões do menu mobile -->
 
     <!-- Overlay -->
     <div class="overlay-menu"></div>
@@ -64,7 +65,8 @@
   <main>
 
     <section class="secao video-section" id="hero">
-      <video class="video-background" autoplay muted loop playsinline>
+      <video class="video-background" autoplay muted loop playsinline aria-hidden="true"
+        poster="./assets/img/img-poster-hero.png">
         <source src="./assets/videos/hero-bg.mp4" type="video/mp4">
       </video> <!-- Vídeo background -->
 
@@ -97,7 +99,8 @@
             <h3>Portfólio - Desenvolvedor Front-End</h3>
             <p>Site de Portfólio. Pensado para quem trabalha na area da tecnologia, mais exatamente na area
               da programação.</p>
-            <a href="https://jr-devfront-portfolio.netlify.app/" target="_blank">Acessar projeto</a>
+            <a href="https://jr-devfront-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar
+              projeto</a>
           </div> <!-- Conteúdo do card -->
         </div> <!-- Card 1 -->
 
@@ -110,7 +113,8 @@
             <h3>Barbearia Primium</h3>
             <p>Site Barvearia. Pensado em mostrar ao cliente tudo que sua barbearia tem a oferecer,
               do bom atendimento ao corte perfeito.</p>
-            <a href="https://barbershop-primium.netlify.app/" target="_blank">Acessar projeto</a>
+            <a href="https://barbershop-primium.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar
+              projeto</a>
           </div> <!-- Conteúdo do card -->
         </div> <!-- Card 2 -->
 
@@ -123,7 +127,7 @@
             <h3>DevClub School</h3>
             <p>Site Institucional. Pensado em ensino na area tecnologica oferecendo recursos e benefícios, desde
               transição de carreira do zero a alavancagem de nível.</p>
-            <a href="https://devclub-school.netlify.app/" target="_blank">Acessar projeto</a>
+            <a href="https://devclub-school.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar projeto</a>
           </div> <!-- Conteúdo do card -->
         </div> <!-- Card 3 -->
 
@@ -136,7 +140,7 @@
             <h3>New World Tech</h3>
             <p>Site Loja Virtual. Pensado em construir um site bonito e que funciona, esse site conecta loja
               e cliente de um jeito simples e objetivo.</p>
-            <a href="https://new-world-tech.netlify.app/" target="_blank">Acessar projeto</a>
+            <a href="https://new-world-tech.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar projeto</a>
           </div> <!-- Conteúdo do card -->
         </div> <!-- Card 4 -->
 
@@ -149,7 +153,7 @@
             <h3>Ninho Nichos</h3>
             <p>Site Profissional Autonomo. Pensado em mostrar seu serviço e habilidade, esse site foi fei com o intuito
               de trazer mais cliente para gerar mais crescimento ao seu negocio.</p>
-            <a href="https://ninhonichospe.netlify.app/" target="_blank">Acessar projeto</a>
+            <a href="https://ninhonichospe.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar projeto</a>
           </div> <!-- Conteúdo do card -->
         </div> <!-- Card 5 -->
       </div> <!-- Grade de cards -->
@@ -171,27 +175,22 @@
         <div class="text-about">
           <div class="description">
             <img src="./assets/img/logo-sphere.png" alt="Imagem esfera">
-            </img>
             <p>Desenvolvedor Front-End</p>
           </div> <!-- descrição desenvolvedor -->
           <div class="description">
             <img src="./assets/img/logo-sphere.png" alt="Imagem esfera">
-            </img>
             <p>Freelancer</p>
           </div> <!-- descrição freelancer -->
           <div class="description">
             <img src="./assets/img/logo-sphere.png" alt="Imagem esfera">
-            </img>
             <p>Pernambuco, Brasil</p>
           </div> <!-- descrição localização -->
           <div class="description">
             <img src="./assets/img/logo-sphere.png" alt="Imagem esfera">
-            </img>
             <p>HTML | CSS | JavaScript</p>
           </div> <!-- descrição tecnologias -->
           <div class="description">
             <img src="./assets/img/logo-sphere.png" alt="Imagem esfera">
-            </img>
             <p>Sempre aprendendo algo novo</p>
           </div> <!-- descrição texto -->
         </div>
@@ -199,7 +198,8 @@
     </section> <!-- Seção sobre -->
 
     <section class="secao video-section" id="skills">
-      <video class="video-background" autoplay muted loop playsinline>
+      <video class="video-background" autoplay muted loop playsinline aria-hidden="true"
+        poster="./assets/img/img-poster-skills.png">
         <source src="./assets/videos/about-bg.mp4" type="video/mp4">
       </video> <!-- Vídeo background -->
 
@@ -239,7 +239,8 @@
             <p>contato.ailtondev3@gmail.com</p>
           </div> <!-- Container texto -->
 
-          <a href="mailto:contato.ailtondev3@gmail.com" target="_blank" class="btn-card email-btn">Enviar e-mail</a>
+          <a href="mailto:contato.ailtondev3@gmail.com" target="_blank" rel="noopener noreferrer"
+            class="btn-card email-btn">Enviar e-mail</a>
           <!-- Botão e-mail -->
         </div> <!-- Card email -->
 
@@ -250,7 +251,7 @@
             <p>/in/ailton-junior-dev-front-end</p>
           </div> <!-- Container texto -->
 
-          <a href="https://www.linkedin.com/in/ailton-junior-dev-front-end/" target="_blank"
+          <a href="https://www.linkedin.com/in/ailton-junior-dev-front-end/" target="_blank" rel="noopener noreferrer"
             class="btn-card linkedin-btn">Conectar</a>
           <!-- Botão linkedin -->
         </div> <!-- Card linkedin -->
@@ -262,7 +263,8 @@
             <p>+55 (81) 99491-0802</p>
           </div> <!-- Container texto -->
 
-          <a href="https://wa.link/k2tkg6" target="_blank" class="btn-card whatsapp-btn">Chama no whats</a>
+          <a href="https://wa.link/k2tkg6" target="_blank" rel="noopener noreferrer" class="btn-card whatsapp-btn">Chama
+            no whats</a>
           <!-- Botão linkedin -->
         </div> <!-- Card whatsapp -->
 
@@ -273,7 +275,8 @@
             <p>/ailtonjunior11</p>
           </div> <!-- Container texto -->
 
-          <a href="https://github.com/ailtonjunior11" target="_blank" class="btn-card github-btn">Ver projetos</a>
+          <a href="https://github.com/ailtonjunior11" target="_blank" rel="noopener noreferrer"
+            class="btn-card github-btn">Ver projetos</a>
           <!-- Botão linkedin -->
         </div> <!-- Card whatsapp -->
       </div> <!-- Container cards -->
@@ -309,7 +312,7 @@
             <li><a href="#hero" class="link-footer">Home</a></li>
             <li><a href="#projects" class="link-footer">Projetos</a></li>
             <li><a href="#about" class="link-footer">Sobre</a></li>
-            <li><a href="#contact" class="link-footer">Contato</a></li>
+            <li><a href="#contacts" class="link-footer">Contato</a></li>
           </ul>
         </div> <!-- Container de links -->
 
@@ -335,8 +338,7 @@
 
   </main> <!-- Container principal -->
 
+  <script src="./assets/scripts.js" defer></script> <!-- Scripts principal -->
 </body>
-
-<script src="./assets/scripts.js"></script> <!-- Scripts principal -->
 
 </html>

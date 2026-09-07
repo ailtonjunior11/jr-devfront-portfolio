@@ -76,6 +76,12 @@
   color: var(--color-cards);
 }
 
+.content-card a:focus-visible {
+  outline: 3px solid var(--color-btn);
+  outline-offset: 4px;
+  border-radius: var(--border-radius-btn);
+}
+
 /* Responsividade */
 
 /* Tablet screen */

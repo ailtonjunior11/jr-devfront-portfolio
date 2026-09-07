@@ -38,11 +38,6 @@ header {
 
 .list-links li a:hover {
   opacity: 1;
-  background-color: var(--color-btn);
-  color: var(--color-bg);
-  border-radius: var(--border-radius-btn);
-  box-shadow: var(--box-shadow-btn);
-  padding: 6px 16px;
 }
 
 .logo .link-logo {
@@ -78,7 +73,6 @@ header {
   background-color: var(--color-cards);
   overflow: hidden;
   z-index: 999;
-  transition: all 0.5s linear ease-in-out;
 }
 
 .nav-mobile.active ~ .overlay-menu {
@@ -98,7 +92,7 @@ header {
   justify-content: center;
   width: 100%;
   padding: 10px;
-  border-radius: var(--border-btn);
+  border-radius: var(--border-radius-btn-btn);
   transition: all 0.5s ease-in-out;
 }
 
@@ -129,6 +123,17 @@ header {
   background: #202336be;
   z-index: 888;
   cursor: pointer;
+}
+
+.link-menu:focus-visible,
+.link-contact:focus-visible,
+.link-menu-mobile:focus-visible,
+.link-logo:focus-visible,
+.btn-open:focus-visible,
+.btn-close:focus-visible {
+  outline: 3px solid var(--color-btn);
+  outline-offset: 4px;
+  border-radius: var(--border-radius-btn);
 }
 
 /* Responsividade */
