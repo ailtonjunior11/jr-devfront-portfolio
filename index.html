@@ -64,13 +64,8 @@
 
   <main>
 
-    <section class="secao video-section" id="hero">
-      <video class="video-background" autoplay muted loop playsinline aria-hidden="true"
-        poster="./assets/img/img-poster-hero.png">
-        <source src="./assets/videos/hero-bg.mp4" type="video/mp4">
-      </video> <!-- Vídeo background -->
-
-      <div class="text-hero">
+    <section class="secao" id="hero">
+      <div class="hero-content">
         <div class="mini-title">
           <img src="./assets/img/logo-title.png" alt="Logo esfera">
           FRONT-END DEVELOPER
@@ -80,7 +75,49 @@
           <a href="#projects" class="btn-cta">Ver Projetos</a>
           <a href="#contacts" class="btn-cta cta-contact">Entrar em Contato</a>
         </div> <!-- Botões de call-to-action -->
-      </div> <!-- Texto da seção principal -->
+      </div> <!-- Conteúdo da seção principal -->
+
+      <div class="browser-scene">
+        <div class="browser-window">
+          <div class="browser-bar">
+            <div class="browser-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="browser-address">ailton.dev/experiences</span>
+            <span class="browser-status">● live</span>
+          </div>
+
+          <div class="browser-layout">
+            <div class="browser-nav">
+              <span class="browser-brand">AJ<span>.</span></span>
+              <span class="browser-nav-line"></span>
+              <span class="browser-nav-line short"></span>
+            </div>
+            <div class="browser-copy">
+              <span class="browser-eyebrow">DIGITAL CRAFT</span>
+              <strong>Design meets<br><em>interaction.</em></strong>
+              <span class="browser-copy-line"></span>
+            </div>
+            <div class="browser-card browser-card-one">
+              <span class="card-orbit"></span>
+              <span>Motion</span>
+            </div>
+            <div class="browser-card browser-card-two">
+              <span class="card-grid"></span>
+              <span>Systems</span>
+            </div>
+            <button class="browser-button" type="button">Explore <span>↗</span></button>
+          </div>
+        </div>
+
+        <code class="code-fragment">&lt;experience /&gt;</code>
+        <span class="scene-tag scene-tag-html">HTML</span>
+        <span class="scene-tag scene-tag-css">CSS</span>
+        <span class="scene-tag scene-tag-js">JS</span>
+        <span class="scene-orbit" aria-hidden="true"></span>
+      </div>
     </section> <!-- Seção principal -->
 
     <section class="secao" id="projects">
@@ -338,6 +375,10 @@
 
   </main> <!-- Container principal -->
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script> <!-- Scripts gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <!-- Scripts scrolltrigger -->
+  <script src="./assets/gsap.js"></script> <!-- Gsap -->
   <script src="./assets/scripts.js" defer></script> <!-- Scripts principal -->
 </body>
 

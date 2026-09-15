@@ -1,46 +1,42 @@
 #hero {
   justify-content: space-between;
-  margin-top: 60px;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 60%,
-    rgba(0, 0, 0, 0.014) 90%
-  );
-  mask-image: linear-gradient(to bottom, black 80%, rgba(0, 0, 0, 0.014) 90%);
+  gap: clamp(3rem, 8vw, 9rem);
+  min-height: calc(100dvh - 60px);
+  /* margin-top: 60px; */
+  padding-inline: clamp(2rem, 7vw, 8rem);
+  background:
+    radial-gradient(
+      circle at 78% 44%,
+      rgba(32, 246, 253, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(135deg, var(--color-bg) 0%, #16192a 100%);
 }
 
-.video-section .text-hero {
+.hero-content {
   position: relative;
   z-index: 2;
-}
-
-.text-hero {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  max-width: 640px;
+  align-items: flex-start;
+  /* padding: 5px 20px; */
+  color: var(--color-btn);
+  gap: 35px;
 }
 
 .mini-title {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: fit-content;
-  font-size: 13px;
-  font-weight: var(--font-weight-regular);
-  background: var(--color-cards);
-  padding: 5px 20px;
-  color: var(--color-btn);
-  border-radius: var(--border-radius-title);
-}
 
-.mini-title img {
-  width: 20px;
+  img {
+    width: 20px;
+  }
 }
 
 h1 {
-  font-size: 65px;
-  line-height: 65px;
+  font-size: clamp(3rem, 5.3vw, 5.4rem);
+  line-height: 0.98;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   text-shadow: 0 0 3px rgb(0, 0, 0);
@@ -48,6 +44,239 @@ h1 {
   span {
     color: var(--color-highlight-title);
   }
+}
+
+.browser-scene {
+  position: relative;
+  flex: 1 1 640px;
+  width: min(52vw, 720px);
+  min-width: 500px;
+  aspect-ratio: 1.15;
+  perspective: 1200px;
+}
+
+.browser-window {
+  position: absolute;
+  inset: 8% 5% 10% 0;
+  overflow: hidden;
+  border: 1px solid rgba(212, 212, 212, 0.22);
+  border-radius: 14px;
+  background: rgba(24, 27, 44, 0.94);
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.42),
+    0 0 55px rgba(32, 246, 253, 0.1);
+  transform: rotateY(-9deg) rotateX(4deg) rotateZ(2deg);
+  transform-style: preserve-3d;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 42px;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(212, 212, 212, 0.12);
+  color: rgba(212, 212, 212, 0.55);
+  font-size: 10px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 5px;
+}
+.browser-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d30cee;
+}
+.browser-dots span:nth-child(2) {
+  background: #20f6fd;
+}
+.browser-dots span:nth-child(3) {
+  background: #e8eddc;
+}
+.browser-address {
+  flex: 1;
+}
+.browser-status {
+  color: var(--color-btn);
+}
+
+.browser-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.4fr 1.5fr 1fr;
+  grid-template-rows: 1fr 0.7fr 0.4fr;
+  gap: 18px;
+  height: calc(100% - 42px);
+  padding: 28px;
+}
+
+.browser-nav {
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-right: 20px;
+  border-right: 1px solid rgba(212, 212, 212, 0.12);
+}
+.browser-brand {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+}
+.browser-brand span,
+.browser-copy em {
+  color: var(--color-highlight-title);
+  font-style: normal;
+}
+.browser-nav-line {
+  width: 100%;
+  height: 5px;
+  margin-top: 28px;
+  border-radius: 5px;
+  background: var(--color-btn);
+  opacity: 0.7;
+}
+.browser-nav-line.short {
+  width: 65%;
+  margin-top: 0;
+  background: var(--color-text);
+  opacity: 0.2;
+}
+
+.browser-copy {
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.browser-eyebrow {
+  color: var(--color-btn);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.browser-copy strong {
+  color: var(--color-text);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  line-height: 0.95;
+}
+.browser-copy-line {
+  width: 45%;
+  height: 1px;
+  margin-top: 10px;
+  background: var(--color-highlight-title);
+}
+
+.browser-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 90px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 212, 212, 0.14);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 11px;
+}
+.browser-card-one {
+  background: linear-gradient(
+    145deg,
+    rgba(32, 246, 253, 0.2),
+    rgba(32, 246, 253, 0.02)
+  );
+}
+.browser-card-two {
+  background: linear-gradient(
+    145deg,
+    rgba(211, 12, 238, 0.22),
+    rgba(211, 12, 238, 0.02)
+  );
+}
+.card-orbit {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: -25px;
+  right: -15px;
+  border: 1px solid var(--color-btn);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(32, 246, 253, 0.5);
+}
+.card-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid var(--color-highlight-title);
+  border-radius: 50%;
+}
+.card-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212, 212, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 212, 212, 0.1) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.browser-button {
+  grid-column: 2;
+  width: 120px;
+  align-self: end;
+  border: 1px solid var(--color-btn);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-btn);
+  font-size: 11px;
+  text-align: left;
+  padding: 10px 12px;
+}
+.browser-button span {
+  float: right;
+}
+
+.code-fragment,
+.scene-tag {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 12px;
+  border: 1px solid rgba(32, 246, 253, 0.35);
+  border-radius: 4px;
+  background: rgba(17, 19, 32, 0.85);
+  color: var(--color-btn);
+  font-size: 11px;
+}
+.code-fragment {
+  right: 0;
+  bottom: 5%;
+}
+.scene-tag {
+  border-color: rgba(211, 12, 238, 0.4);
+  color: var(--color-highlight-title);
+}
+.scene-tag-html {
+  top: 1%;
+  right: 16%;
+}
+.scene-tag-css {
+  right: 0;
+  top: 38%;
+}
+.scene-tag-js {
+  bottom: 17%;
+  left: -4%;
+}
+.scene-orbit {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 20%;
+  left: 3%;
+  border: 2px solid var(--color-btn);
+  border-radius: 50%;
+  box-shadow: 0 0 18px var(--color-btn);
 }
 
 .cta-buttons {
@@ -93,13 +322,22 @@ h1 {
 
 /* Tablet screen */
 @media (max-width: 768px) {
-  .text-hero {
-    max-width: 445px;
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 6rem;
+  }
+
+  .hero-content {
+    flex-basis: auto;
+    align-items: center;
+    text-align: center;
   }
 
   h1 {
     font-size: 45px;
-    line-height: 55px;
+    line-height: 1;
   }
 
   .mini-title {
@@ -111,16 +349,21 @@ h1 {
     }
   }
 
-  .text-hero {
-    gap: 45px;
-  }
-
   .cta-buttons {
     width: 100%;
   }
 
   .btn-cta {
     font-size: 14px;
+  }
+
+  .browser-scene {
+    flex: 0 1 auto;
+    width: min(92vw, 600px);
+    min-width: 0;
+  }
+  .browser-window {
+    inset: 4% 3% 8% 0;
   }
 
   .cta-contact:hover,
@@ -132,21 +375,13 @@ h1 {
 /* Mobile screen */
 @media (max-width: 430px) {
   #hero {
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      black 90%,
-      rgba(0, 0, 0, 0.014) 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      black 90%,
-      rgba(0, 0, 0, 0.014) 100%
-    );
+    min-height: 0;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
   }
-
   h1 {
     font-size: 40px;
-    line-height: 40px;
+    line-height: 1;
   }
 
   .mini-title {
@@ -158,13 +393,49 @@ h1 {
     width: 12px;
   }
 
-  .text-hero {
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-  }
-
   .btn-cta {
     font-size: 12px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .browser-scene {
+    width: 100%;
+    aspect-ratio: 0.95;
+  }
+
+  .browser-layout {
+    gap: 9px;
+    padding: 15px;
+  }
+
+  .browser-bar {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .browser-nav {
+    padding-right: 10px;
+  }
+
+  .browser-copy strong {
+    font-size: 1.6rem;
+  }
+
+  .scene-tag-js {
+    left: 0;
+  }
+}
+
+/* Preferencia de redução de movimentos */
+@media (prefers-reduced-motion: reduce) {
+  .browser-window {
+    transform: none;
+  }
+  .scene-orbit {
+    display: none;
   }
 }
