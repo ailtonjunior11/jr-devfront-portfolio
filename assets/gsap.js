@@ -19,6 +19,10 @@
   const skillItems = skills?.querySelectorAll(".skill-item");
   const skillIcons = skills?.querySelectorAll(".skill-item img");
   const skillsStatus = skills?.querySelector(".skills-status");
+  const projects = document.querySelector("#projects");
+  const projectsTitle = projects?.querySelector(".title-section");
+  const projectCards = projects?.querySelectorAll(".card");
+  const projectImages = projects?.querySelectorAll(".image-card img");
 
   // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos. Configuração seção hero
   if (!hero || !browserWindow || !window.gsap || !window.ScrollTrigger) return;
@@ -49,6 +53,9 @@
         ...(skillItems ? [...skillItems] : []),
         ...(skillIcons ? [...skillIcons] : []),
         skillsStatus,
+        projectsTitle,
+        ...(projectCards ? [...projectCards] : []),
+        ...(projectImages ? [...projectImages] : []),
       ],
       {
         clearProps: "transform,opacity",
@@ -177,6 +184,45 @@
         "<0.15",
       )
       .from(skillsStatus, { y: 20, opacity: 0, duration: 0.5 }, "<0.2");
+  }
+
+  // Configuração seção projetos
+  if (projects) {
+    const projectsTimeline = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      scrollTrigger: {
+        trigger: projects,
+        start: "top 72%",
+        end: "+=1100",
+        scrub: 0.35,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    gsap.set(projectCards, { autoAlpha: 0, y: 28 });
+
+    projectsTimeline
+      .from(projectsTitle, {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+      })
+      .to(
+        projectCards,
+        {
+          autoAlpha: 1,
+          y: 0,
+          stagger: 0.2,
+          duration: 0.45,
+        },
+        "<0.2",
+      );
+
+    projectsTimeline.from(
+      projectImages,
+      { scale: 1.14, duration: 0.8, stagger: 0.12 },
+      "<0.15",
+    );
   }
 
   window.addEventListener("resize", () => ScrollTrigger.refresh());
