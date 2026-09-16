@@ -23,6 +23,12 @@
   const projectsTitle = projects?.querySelector(".title-section");
   const projectCards = projects?.querySelectorAll(".card");
   const projectImages = projects?.querySelectorAll(".image-card img");
+  const contacts = document.querySelector("#contacts");
+  const contactsTitle = contacts?.querySelector(".title-section");
+  const contactsIntro = contacts?.querySelector(".contacts-intro");
+  const contactCards = contacts?.querySelectorAll(".card-contact");
+  const contactIcons = contacts?.querySelectorAll(".card-contact img");
+  const contactsStatus = contacts?.querySelector(".content-final-text");
 
   // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos. Configuração seção hero
   if (!hero || !browserWindow || !window.gsap || !window.ScrollTrigger) return;
@@ -56,6 +62,11 @@
         projectsTitle,
         ...(projectCards ? [...projectCards] : []),
         ...(projectImages ? [...projectImages] : []),
+        contactsTitle,
+        contactsIntro,
+        ...(contactCards ? [...contactCards] : []),
+        ...(contactIcons ? [...contactIcons] : []),
+        contactsStatus,
       ],
       {
         clearProps: "transform,opacity",
@@ -223,6 +234,46 @@
       { scale: 1.14, duration: 0.8, stagger: 0.12 },
       "<0.15",
     );
+  }
+
+  if (contacts) {
+    const contactsTimeline = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      scrollTrigger: {
+        trigger: contacts,
+        start: "top 72%",
+        end: "+=900",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    contactsTimeline
+      .from(contactsTitle, { y: 35, opacity: 0, duration: 0.6 })
+      .from(contactsIntro, { y: 20, opacity: 0, duration: 0.45 }, "<0.15")
+      .from(
+        contactCards,
+        { y: 35, opacity: 0, stagger: 0.14, duration: 0.55 },
+        "<0.15",
+      )
+      .from(
+        contactIcons,
+        { scale: 0.75, opacity: 0, stagger: 0.14, duration: 0.45 },
+        "<0.15",
+      )
+      .from(contactsStatus, { y: 20, opacity: 0, duration: 0.5 }, "<0.2");
+
+    contactCards?.forEach((card) => {
+      const icon = card.querySelector("img");
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(icon, { y: -6, rotate: 4, duration: 0.35, overwrite: true });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(icon, { y: 0, rotate: 0, duration: 0.35, overwrite: true });
+      });
+    });
   }
 
   window.addEventListener("resize", () => ScrollTrigger.refresh());

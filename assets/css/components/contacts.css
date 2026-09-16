@@ -1,5 +1,14 @@
 #contacts {
   flex-direction: column;
+  background: linear-gradient(180deg, #161827, var(--color-bg));
+}
+
+.contacts-intro {
+  margin-top: 24px;
+  color: rgba(212, 212, 212, 0.7);
+  font-size: 16px;
+  font-weight: var(--font-weight-light);
+  text-align: center;
 }
 
 .container-cards {
@@ -7,7 +16,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  margin-top: 100px;
+  margin-top: 65px;
   width: 100%;
 }
 
@@ -20,16 +29,60 @@
   padding: 10px 30px;
   width: 100%;
   height: auto;
+  min-height: 270px;
+  border: 1px solid rgba(212, 212, 212, 0.14);
   border-radius: var(--border-radius-card);
-  transition: all 0.3s ease-in-out;
+  background: rgba(32, 35, 54, 0.78);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   img {
     width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.35s ease;
   }
 }
 
+.card-contact:not(.email-card) {
+  height: 310px;
+  min-height: 310px;
+  justify-content: flex-start;
+  gap: 18px;
+}
+
 .card-contact:hover {
-  transform: scale(1.1);
+  transform: translateY(-8px);
+  border-color: var(--color-btn);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-contact:hover img {
+  transform: translateY(-6px) rotate(4deg);
+}
+
+.email-card {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 190px;
+  padding: 24px 42px;
+  border-color: rgba(32, 246, 253, 0.55);
+  background: linear-gradient(
+    110deg,
+    rgba(32, 246, 253, 0.13),
+    rgba(32, 35, 54, 0.85)
+  );
+}
+
+.email-card .text-card {
+  align-items: flex-start;
+}
+
+.email-card .text-card p {
+  text-align: left;
 }
 
 .text-card {
@@ -39,6 +92,13 @@
   gap: 10px;
   min-width: 0;
   max-width: 100%;
+
+  p {
+    min-height: 48px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
   h4 {
     font-size: 25px;
@@ -55,47 +115,58 @@
 }
 
 .btn-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 220px);
+  min-height: 44px;
   font-weight: var(--font-weight-semi-bold);
-  margin: 10px auto;
+  margin: auto auto 0;
   padding: 10px 30px;
+  text-align: center;
   color: var(--color-text);
   border-radius: var(--border-radius-btn);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.email-card {
-  background: #dab10dd2;
+.btn-card:hover {
+  transform: translateY(-2px);
 }
 
 .linkedin-card {
-  background: #0088ff;
+  border-top: 2px solid #0088ff;
 }
 
 .whatsapp-card {
-  background: #34c759;
+  border-top: 2px solid #34c759;
 }
 
 .github-card {
-  background: #2b2b2b;
+  border-top: 2px solid #d4d4d4;
 }
 
 .email-btn {
-  background: #94790d;
-  border: solid 3px #c7b052;
+  background: var(--color-btn);
+  color: var(--color-bg);
+  border: 1px solid var(--color-btn);
 }
 
 .linkedin-btn {
-  background: #0859a0;
-  border: solid 3px #6cb0eb;
+  background: rgba(0, 136, 255, 0.18);
+  border: 1px solid #0088ff;
 }
 
 .whatsapp-btn {
-  background: #278d40;
-  border: solid 3px #63e283;
+  background: rgba(52, 199, 89, 0.18);
+  border: 1px solid #34c759;
 }
 
 .github-btn {
-  background: #1d1d1d;
-  border: solid 3px #3b3b3b;
+  background: rgba(212, 212, 212, 0.1);
+  border: 1px solid #d4d4d4;
 }
 
 .content-final-text {
@@ -140,6 +211,14 @@
   .card-contact:hover {
     transform: none;
   }
+
+  .card-contact:hover img {
+    transform: none;
+  }
+
+  .email-card {
+    grid-column: span 2;
+  }
 }
 
 /* Tablet screen */
@@ -155,6 +234,25 @@
 
   .container-cards {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .email-card {
+    grid-column: span 1;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .card-contact:not(.email-card) {
+    height: 290px;
+    min-height: 290px;
+  }
+
+  .email-card .text-card {
+    align-items: center;
+  }
+
+  .email-card .text-card p {
+    text-align: center;
   }
 
   .container-cards {
