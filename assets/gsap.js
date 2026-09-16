@@ -41,6 +41,20 @@
   // O código verifica se o usuário prefere menos animações
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  if (!motion.matches && window.Lenis) {
+    const lenis = new Lenis({
+      duration: 1.05,
+      easing: (value) => 1 - Math.pow(1 - value, 4),
+      smoothWheel: true,
+      smoothTouch: false,
+      anchors: true,
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
   // Se essa preferência estiver ativa, o GSAP remove transformações e opacidades animadas
   if (motion.matches) {
     gsap.set(
@@ -256,7 +270,7 @@
       .from(contactsIntro, { y: 20, opacity: 0, duration: 0.45 }, "<0.15")
       .from(
         contactCards,
-        { y: 35, opacity: 0, stagger: 0.14, duration: 0.55 },
+        { opacity: 0, stagger: 0.14, duration: 0.55 },
         "<0.15",
       )
       .from(
