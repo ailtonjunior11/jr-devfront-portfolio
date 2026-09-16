@@ -29,6 +29,8 @@
   const contactCards = contacts?.querySelectorAll(".card-contact");
   const contactIcons = contacts?.querySelectorAll(".card-contact img");
   const contactsStatus = contacts?.querySelector(".content-final-text");
+  const footer = document.querySelector("footer");
+  const footerColumns = footer?.querySelectorAll(".content-footer > *");
 
   // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos. Configuração seção hero
   if (!hero || !browserWindow || !window.gsap || !window.ScrollTrigger) return;
@@ -67,6 +69,7 @@
         ...(contactCards ? [...contactCards] : []),
         ...(contactIcons ? [...contactIcons] : []),
         contactsStatus,
+        ...(footerColumns ? [...footerColumns] : []),
       ],
       {
         clearProps: "transform,opacity",
@@ -273,6 +276,21 @@
       card.addEventListener("mouseleave", () => {
         gsap.to(icon, { y: 0, rotate: 0, duration: 0.35, overwrite: true });
       });
+    });
+  }
+
+  // Configurações seção footer
+  if (footer) {
+    gsap.from(footerColumns, {
+      y: 25,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.6,
+      scrollTrigger: {
+        trigger: footer,
+        start: "top 88%",
+        toggleActions: "play none none reverse",
+      },
     });
   }
 

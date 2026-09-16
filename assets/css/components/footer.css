@@ -2,11 +2,15 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 50px 10px;
-  background: var(--color-cards);
+  padding: 70px 2% 25px;
+  background: linear-gradient(180deg, var(--color-bg), var(--color-cards));
+  border-top: 1px solid rgba(32, 246, 253, 0.16);
 
   .copy {
-    color: var(--color-text);
+    padding-top: 25px;
+    border-top: 1px solid rgba(212, 212, 212, 0.1);
+    color: rgba(212, 212, 212, 0.55);
+    font-size: 12px;
     font-weight: var(--font-weight-regular);
     text-align: center;
   }
@@ -14,7 +18,10 @@ footer {
 
 .content-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 80px;
+  width: min(100%, 1200px);
+  margin: 0 auto;
   color: var(--color-text);
   padding: 0 0 20px;
   border-bottom: solid 1px #303030;
@@ -26,16 +33,14 @@ footer {
   gap: 25px;
   max-width: 420px;
   padding: 10px;
-}
 
-.content-final-footer {
-  justify-content: center;
-  width: 100%;
-  padding: 8px 0;
-  margin: 0;
+  .link-logo {
+    width: fit-content;
+  }
 
-  p {
-    font-size: 16px;
+  > p {
+    color: rgba(212, 212, 212, 0.7);
+    line-height: 1.7;
   }
 }
 
@@ -61,6 +66,14 @@ footer {
     font-size: 16px;
     font-weight: var(--font-weight-regular);
     color: var(--color-text);
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .link-footer:hover {
+    color: var(--color-btn);
+    transform: translateX(4px);
   }
 }
 
@@ -78,11 +91,14 @@ footer {
 
   a {
     border-radius: 50px;
-    transition: 0.2s;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
   }
 
   a:hover {
-    transform: scale(1.1);
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 8px var(--color-btn));
   }
 
   p {
@@ -112,8 +128,13 @@ footer {
     align-items: center;
   }
 
+  .content-footer {
+    width: min(100%, 520px);
+  }
+
   .icons-redes-sociais a:hover {
     transform: none;
+    filter: none;
   }
 }
 
@@ -121,10 +142,5 @@ footer {
 @media (max-width: 430px) {
   .text-content-footer p {
     font-size: 14px;
-  }
-  .content-final-footer {
-    p {
-      font-size: 13px;
-    }
   }
 }
