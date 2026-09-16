@@ -13,6 +13,12 @@
   const aboutLine = about?.querySelector(".about-line");
   const aboutDescriptions = about?.querySelectorAll(".description");
   const aboutIcons = about?.querySelectorAll(".description img");
+  const skills = document.querySelector("#skills");
+  const skillsTitle = skills?.querySelector(".title-section");
+  const skillsSubtitle = skills?.querySelector(".sub-title-skills");
+  const skillItems = skills?.querySelectorAll(".skill-item");
+  const skillIcons = skills?.querySelectorAll(".skill-item img");
+  const skillsStatus = skills?.querySelector(".skills-status");
 
   // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos. Configuração seção hero
   if (!hero || !browserWindow || !window.gsap || !window.ScrollTrigger) return;
@@ -38,6 +44,11 @@
         aboutLine,
         ...(aboutDescriptions ? [...aboutDescriptions] : []),
         ...(aboutIcons ? [...aboutIcons] : []),
+        skillsTitle,
+        skillsSubtitle,
+        ...(skillItems ? [...skillItems] : []),
+        ...(skillIcons ? [...skillIcons] : []),
+        skillsStatus,
       ],
       {
         clearProps: "transform,opacity",
@@ -137,6 +148,35 @@
         },
         "<0.2",
       );
+  }
+
+  // Configuração seção skills
+  if (skills) {
+    const skillsTimeline = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      scrollTrigger: {
+        trigger: skills,
+        start: "top 72%",
+        end: "+=900",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    skillsTimeline
+      .from(skillsTitle, { y: 35, opacity: 0, duration: 0.6 })
+      .from(skillsSubtitle, { y: 20, opacity: 0, duration: 0.45 }, "<0.15")
+      .from(
+        skillItems,
+        { y: 45, opacity: 0, scale: 0.96, stagger: 0.16, duration: 0.7 },
+        "<0.15",
+      )
+      .from(
+        skillIcons,
+        { scale: 0, rotate: -25, opacity: 0, stagger: 0.16, duration: 0.5 },
+        "<0.15",
+      )
+      .from(skillsStatus, { y: 20, opacity: 0, duration: 0.5 }, "<0.2");
   }
 
   window.addEventListener("resize", () => ScrollTrigger.refresh());
