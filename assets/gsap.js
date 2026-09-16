@@ -6,8 +6,15 @@
   const sceneTags = document.querySelectorAll(".scene-tag");
   const codeFragment = document.querySelector(".code-fragment");
   const sceneOrbit = document.querySelector(".scene-orbit");
+  const about = document.querySelector("#about");
+  const aboutTitle = about?.querySelector(".title-section");
+  const aboutSubtitle = about?.querySelector(".sub-title");
+  const aboutImage = about?.querySelector(".my-img");
+  const aboutLine = about?.querySelector(".about-line");
+  const aboutDescriptions = about?.querySelectorAll(".description");
+  const aboutIcons = about?.querySelectorAll(".description img");
 
-  // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos.
+  // Isso evita erros caso o script seja carregado em uma página que não tenha esses elementos. Configuração seção hero
   if (!hero || !browserWindow || !window.gsap || !window.ScrollTrigger) return;
 
   // Registro do plugin GSAP
@@ -25,6 +32,12 @@
         ...browserCards,
         ...sceneTags,
         codeFragment,
+        aboutTitle,
+        aboutSubtitle,
+        aboutImage,
+        aboutLine,
+        ...(aboutDescriptions ? [...aboutDescriptions] : []),
+        ...(aboutIcons ? [...aboutIcons] : []),
       ],
       {
         clearProps: "transform,opacity",
@@ -75,6 +88,56 @@
       "<",
     )
     .to(browserWindow, { y: -70, scale: 1.12, duration: 1 });
+
+  // Configuração seção sobre
+  if (about) {
+    const aboutTimeline = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      scrollTrigger: {
+        trigger: about,
+        start: "top 72%",
+        end: "+=1000",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    aboutTimeline
+      .from(aboutTitle, { y: 35, opacity: 0, duration: 0.6 })
+      .from(aboutSubtitle, { y: 25, opacity: 0, duration: 0.5 }, "<0.15")
+      .from(
+        aboutImage,
+        {
+          scale: 0.72,
+          opacity: 0,
+          rotate: -10,
+          boxShadow: "0 0 0 rgba(32, 246, 253, 0)",
+          duration: 1,
+        },
+        "<0.1",
+      )
+      .from(aboutLine, { scaleX: 0, opacity: 0, duration: 0.5 }, "<0.25")
+      .from(
+        aboutDescriptions,
+        { x: 70, opacity: 0, stagger: 0.16, duration: 0.65 },
+        "<0.15",
+      )
+      .from(
+        aboutIcons,
+        { scale: 0, rotate: -90, opacity: 0, stagger: 0.16, duration: 0.45 },
+        "<0.15",
+      )
+      .to(
+        aboutImage,
+        {
+          y: -25,
+          rotate: 2,
+          boxShadow: "0 0 38px rgba(32, 246, 253, 0.35)",
+          duration: 1,
+        },
+        "<0.2",
+      );
+  }
 
   window.addEventListener("resize", () => ScrollTrigger.refresh());
 })();
