@@ -41,6 +41,7 @@
   // O código verifica se o usuário prefere menos animações
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  // Efeito da barra de scroll suave
   if (!motion.matches && window.Lenis) {
     const lenis = new Lenis({
       duration: 1.05,
@@ -253,6 +254,7 @@
     );
   }
 
+  // Configuração seção contatos
   if (contacts) {
     const contactsTimeline = gsap.timeline({
       defaults: { ease: "power2.out" },

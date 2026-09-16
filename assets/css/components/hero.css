@@ -35,7 +35,7 @@
 }
 
 h1 {
-  font-size: clamp(3rem, 5.3vw, 5.4rem);
+  font-size: clamp(3rem, 4.6vw, 5.4rem);
   line-height: 0.98;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
@@ -123,7 +123,7 @@ h1 {
 }
 .browser-brand {
   color: var(--color-text);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
 }
 .browser-brand span,
@@ -336,7 +336,6 @@ h1 {
   }
 
   h1 {
-    font-size: 45px;
     line-height: 1;
   }
 
@@ -378,10 +377,6 @@ h1 {
     min-height: 0;
     padding-top: 7rem;
     padding-bottom: 4rem;
-  }
-  h1 {
-    font-size: 40px;
-    line-height: 1;
   }
 
   .mini-title {
