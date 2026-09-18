@@ -9,7 +9,15 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background: var(--color-cards);
+  border-bottom: 1px solid rgba(32, 246, 253, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(17, 19, 32, 0.92),
+    rgba(32, 35, 54, 0.82),
+    rgba(17, 19, 32, 0.92)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .menu-desktop {
@@ -70,7 +78,15 @@ header {
   right: 0;
   width: 70%;
   height: 100dvh;
-  background-color: var(--color-cards);
+  border-left: 1px solid rgba(32, 246, 253, 0.16);
+  border-bottom: 1px solid rgba(32, 246, 253, 0.16);
+  background: linear-gradient(
+    180deg,
+    rgba(32, 35, 54, 0.94),
+    rgba(17, 19, 32, 0.96)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   overflow: hidden;
   z-index: 999;
 }
