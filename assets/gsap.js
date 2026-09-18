@@ -6,6 +6,9 @@
   const sceneTags = document.querySelectorAll(".scene-tag");
   const codeFragment = document.querySelector(".code-fragment");
   const sceneOrbit = document.querySelector(".scene-orbit");
+  const heroContentElements = hero?.querySelectorAll(
+    ".browser-copy > *, .browser-cta > *",
+  );
   const about = document.querySelector("#about");
   const aboutTitle = about?.querySelector(".title-section");
   const aboutSubtitle = about?.querySelector(".sub-title");
@@ -65,6 +68,7 @@
         ...browserCards,
         ...sceneTags,
         codeFragment,
+        ...(heroContentElements ? [...heroContentElements] : []),
         aboutTitle,
         aboutSubtitle,
         aboutImage,
@@ -117,8 +121,13 @@
       duration: 1,
     })
     .from(
-      browserLayout.children,
+      browserLayout.querySelectorAll(".browser-nav, .browser-card"),
       { y: 28, opacity: 0, stagger: 0.12, duration: 0.7 },
+      "<0.15",
+    )
+    .from(
+      heroContentElements,
+      { y: 34, opacity: 0, scale: 0.96, stagger: 0.16, duration: 0.7 },
       "<0.15",
     )
     .from(
@@ -130,8 +139,8 @@
     .to(sceneOrbit, { x: 430, y: 150, scale: 0.6, duration: 1.3 }, "<")
     .to(browserLayout, { rotate: -2, scale: 0.94, duration: 1 })
     .to(
-      hero.querySelector(".hero-content"),
-      { x: -80, opacity: 0, duration: 0.8 },
+      heroContentElements,
+      { x: -80, opacity: 0, scale: 0.96, stagger: 0.12, duration: 0.8 },
       "<",
     )
     .to(browserWindow, { y: -70, scale: 1.12, duration: 1 });
