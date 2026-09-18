@@ -7,7 +7,7 @@
   const codeFragment = document.querySelector(".code-fragment");
   const sceneOrbit = document.querySelector(".scene-orbit");
   const heroContentElements = hero?.querySelectorAll(
-    ".browser-copy > *, .browser-cta > *",
+    ".browser-copy > *, .browser-cta",
   );
   const about = document.querySelector("#about");
   const aboutTitle = about?.querySelector(".title-section");
